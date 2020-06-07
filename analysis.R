@@ -28,7 +28,7 @@ p.disparity.time <- df %>% select(date, race) %>%
   geom_point( aes (color = race))+
   geom_smooth(method = "lm",
               se=F,
-              aes (color = race, fill = race)) + s
+              aes (color = race, fill = race)) +
   scale_y_continuous(label = scales::number) +
   scale_fill_brewer(palette = "Paired")
 
@@ -114,16 +114,16 @@ p.party.diff.pr <- ggpretay(p.party.diff, title = "Party matters?",
 p.party.diff.pr +  theme(axis.text= element_text(family ="Muli"))
   
 
-  
+# Significant difference  
 summary(lm(permillion ~ party + race, party_data)   )
 
 
 
 
-
-+ stat_stack_labels()
-
-  geom_text(aes(label=paste0(sprintf("%1.1f", permillion*100),"%")), 
-            position=position_stack(vjust=0.5), colour="white")
-
+# # Things learnt
+# case when
+# multiple bar graph
+# adjusting dates
+# elections data
+# race relations
   
